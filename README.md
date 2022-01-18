@@ -3,6 +3,8 @@ Sample Todo App with DotNetCore6 and SQL DB
 
 This has a SQL Database Dependancy. The images below provides information about the database and the code below provides information on how to create the table. 
 
+`MyDbConnection` environment variable needs to be set with the SQL Connection String. 
+
 ![Rendered site](images/view.PNG)
 
 ![SQL Database and Table](images/sqltable.PNG)
