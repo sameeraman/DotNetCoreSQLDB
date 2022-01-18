@@ -1,0 +1,28 @@
+﻿@model DotNetCoreSqlDb.Models.Todo
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="text-center" style="max-width: 20rem;text-align: center; margin: auto;">
+    <h1>Details</h1>
+
+    <div>
+        <hr />
+        <div class="card border-success mb-3" style="max-width: 20rem;">
+            <div class="card-header">Todo Item</div>
+            <div class="card-body">
+                <h4 class="card-title">@Html.DisplayNameFor(model => model.CreatedDate)</h4>
+                <p class="card-text">@Html.DisplayFor(model => model.CreatedDate)</p>
+                <h4 class="card-title">@Html.DisplayNameFor(model => model.Description)</h4>
+                <p class="card-text">@Html.DisplayFor(model => model.Description)</p>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="d-grid gap-2">
+        <a  class="btn btn-lg btn-success" asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
+        <a  class="btn btn-lg btn-secondary" asp-action="Index">Back to List</a>
+    </div>
+</div>

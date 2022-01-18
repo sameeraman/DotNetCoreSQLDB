@@ -1,0 +1,42 @@
+﻿@model DotNetCoreSqlDb.Models.Todo
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="text-center" style="max-width: 20rem;text-align: center; margin: auto;">
+<h1>Create Item</h1>
+
+<hr />
+<div class="row">
+    <div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedDate" class="control-label"></label>
+                <input asp-for="CreatedDate" class="form-control" />
+                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+            </div>
+            &nbsp;
+            <div class="form-group">
+                <div class="d-grid gap-2">
+                <input type="submit" value="Create" class="btn btn-lg btn-success" />
+                <//div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="d-grid gap-2">
+    <a class="btn btn-lg btn-secondary" asp-action="Index">Back to List</a>
+</div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

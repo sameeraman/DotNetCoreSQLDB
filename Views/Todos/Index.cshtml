@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DotNetCoreSqlDb.Models.Todo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="text-center" style="max-width: 20rem;text-align: center; margin: auto;">
+   
+
+<h1>To Do List</h1>
+
+<p>
+    
+    <div class="d-grid gap-2">
+
+  <a asp-action="Create" class="btn btn-lg btn-success">Create New</a>
+
+</div>
+</p>
+
+
+@foreach (var item in Model)
+{
+    <div class="card border-secondary mb-3"  >
+        <div class="card-header">@Html.DisplayFor(modelItem => item.CreatedDate)</div>
+        <div class="card-body">
+            <h4 class="card-title">@Html.DisplayFor(modelItem => item.Description)</h4>
+            <p class="card-text">
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-success btn-sm"> Edit </a> |
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info btn-sm">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger btn-sm">Delete</a>
+            </p>
+        </div>
+    </div>
+}
+
+</div>
